@@ -1,0 +1,57 @@
+/**
+* @author:	 							Colapiombo
+* @copyright:							Copyright (c) 2020 Paolo Combi. (https://combi.li/)
+* Licensed under the CCA 3.0 license:	https://creativecommons.org/licenses/by/3.0/
+* 
+*/
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+
+:root{
+    --unnamed-font-family-lato: 'Lato', sans-serif;
+    --unnamed-font-family-roboto-slab:  'Oxygen', sans-serif;
+    --unnamed-font-family-segoe-ui: S'Roboto Slab', serif;
+
+    /* Colors: */
+    --unnamed-color-ffffff: #FFFFFF;
+    --unnamed-color-4D7A9B: #4D7A9B;
+    --unnamed-color-F29F05: #F29F05;
+    --unnamed-color-A2A2A2: #A2A2A2;
+    --unnamed-color-7579FE: #7579FE;
+    --unnamed-color-88AFCC: #88AFCC;
+
+
+    
+
+    --unnamed-font-style-normal: normal;
+    --unnamed-font-style-italic: italic;
+    --unnamed-font-weight-600: 600px;
+    --unnamed-font-weight-bold: bold;
+    --unnamed-font-weight-normal: normal;
+    --unnamed-font-size-12: 12px;
+    --unnamed-font-size-14: 14px;
+    --unnamed-font-size-15: 15px;
+    --unnamed-font-size-18: 18px;
+    --unnamed-font-size-32: 32px;
+    --unnamed-character-spacing-0: 0px;
+    --unnamed-character-spacing-1-2: 1.2px;
+    --unnamed-line-spacing-19: 19px;
+    --unnamed-line-spacing-20: 20px;
+    --unnamed-line-spacing-24: 24px;
+    --unnamed-line-spacing-43: 43px;
+    --unnamed-line-spacing-45: 45px;
+    --unnamed-text-transform-uppercase: uppercase;
+}
+
+[data-theme="dark"] {
+    /* Colors: */
+    --unnamed-color-ffffff: #C7CEC7;
+    --unnamed-color-4D7A9B: #04C4D9;
+    --unnamed-color-F29F05: #8FE50E;
+    --unnamed-color-A2A2A2: #607061;
+    --unnamed-color-7579FE: #A3B2A4;
+    --unnamed-color-88AFCC: #F0F0F0;
+}
