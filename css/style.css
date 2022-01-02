@@ -20,7 +20,6 @@
 }
 
 body {
-    padding: 0.3em;
     margin: 0;
     font-size: 16px;
     background-color: var(--bg-color);
@@ -33,7 +32,7 @@ body {
 
 .mp {
     max-width: 100ex;
-    padding: 0 9ex 1ex 2ex;
+    padding: 0 9ex 1ex 1.5ex;
     text-align: justify;
     color: var(--font-color);
 }
@@ -62,7 +61,7 @@ dl {
 
 p,
 dl {
-    margin-left: 2ex;
+    margin-left: 1.5ex;
 }
 
 dt,
