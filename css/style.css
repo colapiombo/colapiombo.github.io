@@ -20,20 +20,20 @@
 }
 
 body {
-    padding: 1em;
+    padding: 0.3em;
     margin: 0;
     font-size: 16px;
     background-color: var(--bg-color);
     color: var(--font-color);
     font-family: monospace;
-    font-size: 0.875rem;
-    line-height: 1.42857142857143;
+    font-size: 0.8rem;
+    line-height: 1.5;
     /* 20px*/
 }
 
 .mp {
     max-width: 100ex;
-    padding: 0 9ex 1ex 4ex;
+    padding: 0 9ex 1ex 2ex;
     text-align: justify;
     color: var(--font-color);
 }
@@ -62,7 +62,7 @@ dl {
 
 p,
 dl {
-    margin-left: 8ex;
+    margin-left: 2ex;
 }
 
 dt,
