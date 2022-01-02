@@ -140,7 +140,7 @@ input[type=checkbox]:focus {
 
 .toggle {
     height: 20px;
-    width: 52px;
+    width: 60px;
     display: inline-block;
     position: relative;
     margin: 0;
@@ -166,5 +166,5 @@ input[type=checkbox]:focus {
 }
 
 .toggle:checked:after {
-    transform: translatex(30px);
+    transform: translatex(40px);
 }

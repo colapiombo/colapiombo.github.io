@@ -1,26 +1,29 @@
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const toggleSwitch = document.querySelectorAll('.theme-switch input[type="checkbox"]');
 const currentTheme = localStorage.getItem('theme');
 
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
 
     if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
+        toggleSwitch.forEach(element => {
+            toggleSwitch.checked = true;
+        });
     }
 }
 
 function switchTheme(e) {
+    var currentTheme;
     if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
+        currentTheme = 'dark';
     } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
+        currentTheme = 'light';
     }
-
-    console.log(e.target.checked);
-    console.log(document.documentElement);
-
+    toggleSwitch.forEach(element => {
+        element.checked = e.target.checked;
+    });
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    localStorage.setItem('theme', currentTheme);
 }
-
-toggleSwitch.addEventListener('change', switchTheme, false);
+toggleSwitch.forEach(element => {
+    element.addEventListener('change', switchTheme, false);
+});
