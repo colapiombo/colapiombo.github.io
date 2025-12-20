@@ -59,19 +59,17 @@
         .logo {
             text-decoration: none;
             display: block;
-            line-height: 0; /* Rimuove spazi extra sotto l'immagine */
+            line-height: 0; 
         }
 
         .logo img {
-            height: 40px; /* Altezza fissa per mantenere le proporzioni */
+            height: 40px; 
             width: auto;
             display: block;
             transition: filter 0.3s;
         }
 
-        /* SMART LOGO INVERSION FOR DARK MODE 
-           Se il tuo logo è nero su trasparente, questo lo renderà bianco in dark mode.
-           Se il tuo logo è colorato e non vuoi questo effetto, rimuovi questa riga. */
+        /* SMART LOGO INVERSION FOR DARK MODE */
         body.dark-theme .logo img {
             filter: invert(1);
         }
@@ -132,7 +130,6 @@
             margin-bottom: 10px;
             color: var(--text-secondary);
         }
-        /* Usiamo un semplice trattino invece del bullet point */
         .job-desc li::before { content: "— "; color: var(--text-secondary); margin-right: 5px;}
 
         /* SKILLS LIST - SEMPLIFICATA */
@@ -152,6 +149,20 @@
         .skill-list li::after { content: ","; }
         .skill-list li:last-child::after { content: ""; }
 
+        /* PASSIONS LINKS */
+        .passions-list {
+            list-style: none;
+            padding: 0;
+        }
+        .passions-list li {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+        .passions-list li strong {
+            color: var(--text-primary);
+            margin-right: 5px;
+        }
+
         /* FOOTER */
         footer {
             margin-top: var(--section-gap);
@@ -161,6 +172,7 @@
             font-size: 0.9rem;
             display: flex;
             justify-content: space-between;
+            padding-bottom: 40px;
         }
         footer nav a { margin-left: 20px; border: none; }
         footer nav a:hover { color: var(--text-primary); }
@@ -202,7 +214,7 @@
         <section>
             <h2>About</h2>
             <p style="color: var(--text-secondary);">
-                Based in Berlin. Currently working at <strong>Vinted</strong> on the Ontologies domain. I specialize in backend engineering and system decoupling. Recently, I've been driving the internal adoption of <strong>Knowledge Graphs</strong> to solve complex discovery challenges. When not coding, I practice theater improvisation and play jazz piano.
+                Based in Berlin. Currently working at <strong>Vinted</strong> on the Ontologies domain. I specialize in backend engineering and system decoupling. Recently, I've been driving the internal adoption of <strong>Knowledge Graphs</strong> to solve complex discovery challenges.
             </p>
         </section>
 
@@ -250,17 +262,6 @@
         </section>
 
         <section>
-            <h2>Public Speaking</h2>
-            <div class="job-item">
-                 <ul class="job-desc">
-                    <li>Guest Speaker, <strong>IoT & Big Data Conference</strong> (Lugano)</li>
-                    <li>Technical Presenter, <strong>TIBCO Jaspersoft Launch</strong> (Milan)</li>
-                    <li>Webinar Speaker, <strong>Qlik Predictive Analytics</strong></li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
             <h2>Stack & Concepts</h2>
             <div class="skills-block">
                 <h3>Architecture & Data</h3>
@@ -281,6 +282,28 @@
                     <li>Redis</li>
                 </ul>
             </div>
+        </section>
+
+        <section>
+            <h2>Beyond Code</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">
+                I believe that engineering is just one part of the equation. I cultivate empathy and discipline through arts and sports, and I am committed to a sustainable future.
+            </p>
+            
+            <ul class="passions-list">
+                <li>
+                    <strong>Treedom:</strong> <a href="https://www.treedom.net/en/user/colapiombo" target="_blank">My Forest</a> — Committed to sustainability (a core value I share with Vinted).
+                </li>
+                <li>
+                    <strong>Goodreads:</strong> <a href="https://www.goodreads.com/colapiombo  target="_blank">My Bookshelf</a> — Continuous learning and reading.
+                </li>
+                <li>
+                    <strong>Strava:</strong> <a href="https://strava.com/athletes/5276888" target="_blank">My Activities</a> — Running, cycling, gym, and bouldering (plus long walks with my dog).
+                </li>
+                <li>
+                    <strong>Arts:</strong> Theater Improvisation & Piano.
+                </li>
+            </ul>
         </section>
 
     </main>
