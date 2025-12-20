@@ -3,168 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Paolo Combi - Senior Backend Engineer & Distributed Systems Architect. Specializing in DDD, Knowledge Graphs, and Monolith Decomposition.">
-    <title>Paolo Combi | Distributed Systems Architect</title>
+    <meta name="description" content="Paolo Combi - Senior Backend Engineer & Distributed Systems Architect.">
+    <title>Paolo Combi</title>
     <style>
+        /* DEFINIZIONE VARIABILI COLORI (Light Mode Default) */
         :root {
-            --bg-color: #ffffff;
-            --text-color: #1a1a1a;
-            --accent-color: #e65100; /* Un arancione simile al CV */
-            --secondary-text: #666;
-            --section-spacing: 80px;
-            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --bg: #ffffff;
+            --text-primary: #000000;
+            --text-secondary: #555555;
+            --border-color: #e0e0e0;
+            --font-stack: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --section-gap: 100px;
         }
 
-        /* Dark Mode support (Opzionale, automatico) */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #111;
-                --text-color: #eee;
-                --secondary-text: #aaa;
-            }
+        /* DEFINIZIONE VARIABILI DARK MODE */
+        body.dark-theme {
+            --bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #aaaaaa;
+            --border-color: #333333;
         }
 
+        /* RESET E BASE */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
-            font-family: var(--font-main);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            font-size: 18px;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-stack);
+            line-height: 1.5;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
         }
 
+        /* CONTENITORE ULTRA-STRETTO PER MASSIMO MINIMALISMO */
         .container {
-            max-width: 800px;
+            max-width: 640px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
 
-        /* Header & Nav */
+        /* HEADER & TOGGLE */
         header {
-            padding: 40px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 80px;
+            padding-top: 20px;
         }
 
-        .logo { font-weight: 700; font-size: 1.2rem; text-decoration: none; color: var(--text-color); }
-        
-        nav a {
-            margin-left: 20px;
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             text-decoration: none;
-            color: var(--secondary-text);
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-        nav a:hover { color: var(--accent-color); }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 0;
+            color: var(--text-primary);
         }
 
+        .theme-toggle-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-primary);
+            padding: 8px;
+        }
+        .theme-toggle-btn svg { width: 24px; height: 24px; fill: currentColor; }
+        .dark-icon { display: none; }
+        body.dark-theme .light-icon { display: none; }
+        body.dark-theme .dark-icon { display: block; }
+
+        /* TYPOGRAPHY & SECTIONS */
         h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--secondary-text);
-            font-weight: 300;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--text-color);
-            color: var(--bg-color);
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-        
-        .cta-button:hover { background-color: var(--accent-color); }
-
-        /* Sections General */
-        section { margin-bottom: var(--section-spacing); }
-        
-        h2 {
-            font-size: 1.8rem;
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -1px;
             margin-bottom: 30px;
-            border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
-            padding-bottom: 5px;
         }
 
-        /* Experience Items */
-        .job-item { margin-bottom: 40px; }
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 10px;
+        h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 600;
         }
-        .job-title { font-weight: 700; font-size: 1.2rem; }
-        .job-company { color: var(--accent-color); }
-        .job-date { font-size: 0.9rem; color: var(--secondary-text); }
-        .job-desc { list-style: none; }
+
+        p.lead {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        section { margin-bottom: var(--section-gap); }
+
+        a {
+            color: var(--text-primary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-color);
+            transition: border-color 0.2s;
+        }
+        a:hover { border-bottom-color: var(--text-primary); }
+
+        /* EXPERIENCE LIST - PULITISSIMA */
+        .job-item { margin-bottom: 50px; }
+        .job-title { font-size: 1.3rem; font-weight: 600; display: block; margin-bottom: 5px;}
+        .job-meta { color: var(--text-secondary); font-size: 0.9rem; display: block; margin-bottom: 20px; }
+        .job-desc { list-style: none; padding: 0; }
         .job-desc li {
-            margin-bottom: 8px;
-            padding-left: 20px;
-            position: relative;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
         }
-        .job-desc li::before {
-            content: "•";
-            color: var(--accent-color);
-            position: absolute;
-            left: 0;
-        }
+        /* Usiamo un semplice trattino invece del bullet point */
+        .job-desc li::before { content: "— "; color: var(--text-secondary); margin-right: 5px;}
 
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+        /* SKILLS LIST - SEMPLIFICATA */
+        .skills-block { margin-bottom: 40px; }
+        .skills-block h3 { font-size: 1rem; margin-bottom: 15px; font-weight: 600; }
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        .skill-category h3 { font-size: 1rem; margin-bottom: 10px; color: var(--secondary-text); text-transform: uppercase; letter-spacing: 1px; }
-        .skill-list { list-style: none; }
-        
-        /* Speaking & Community */
-        .speaking-item { margin-bottom: 20px; }
-        .speaking-title { font-weight: 600; }
-        .speaking-event { color: var(--secondary-text); font-style: italic; }
+        .skill-list li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .skill-list li::after { content: ","; }
+        .skill-list li:last-child::after { content: ""; }
 
-        /* Footer */
+        /* FOOTER */
         footer {
-            border-top: 1px solid #ddd;
-            padding: 40px 0;
-            margin-top: 80px;
-            color: var(--secondary-text);
+            margin-top: var(--section-gap);
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
             font-size: 0.9rem;
             display: flex;
             justify-content: space-between;
         }
+        footer nav a { margin-left: 20px; border: none; }
+        footer nav a:hover { color: var(--text-primary); }
 
-        .social-links a {
-            color: var(--text-color);
-            margin-left: 15px;
-            text-decoration: none;
-        }
-
-        /* Mobile tweaks */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .job-header { flex-direction: column; }
-            header { flex-direction: column; gap: 10px; }
-            nav a { margin: 0 10px; }
-        }
     </style>
 </head>
 <body>
@@ -173,153 +158,131 @@
     
     <header>
         <a href="#" class="logo">Paolo Combi</a>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#speaking">Speaking</a>
-            <a href="mailto:paolo@combi.li">Contact</a>
-        </nav>
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+            <svg class="dark-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 9c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+            <svg class="light-icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+        </button>
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Backend Engineer.<br>System Architect.</h1>
-            <p class="subtitle">
-                Architecting high-scale distributed systems using <strong>Domain-Driven Design</strong> and <strong>Knowledge Graphs</strong>. 
-                Currently evolving the Ontologies domain at Vinted.
+        <section>
+            <h1>System Architect.<br>Backend Lead.</h1>
+            <p class="lead">
+                Architecting high-scale distributed systems using Domain-Driven Design and Knowledge Graphs.
             </p>
-            <a href="resume.pdf" class="cta-button" target="_blank">Download Resume</a>
+            <p><a href="resume.pdf" target="_blank">Download Resume (PDF)</a></p>
         </section>
 
-        <section id="about">
+        <section>
             <h2>About</h2>
-            <p>
-                I am a Senior Backend Engineer with over 10 years of experience in scaling high-traffic e-commerce platforms. 
-                My focus goes beyond writing code: I specialize in <strong>Strategic Architecture</strong>, transitioning legacy monoliths 
-                into flexible distributed systems.
-            </p>
-            <br>
-            <p>
-                I thrive in ambiguous environments where I can decouple complex systems and introduce semantic technologies 
-                to improve product discovery. Based in Berlin, I balance my technical life with theater improvisation and jazz piano.
+            <p style="color: var(--text-secondary);">
+                Based in Berlin. Currently evolving the Ontologies domain at <strong>Vinted</strong>. I specialize in transitioning legacy monoliths into flexible distributed systems. When not designing architecture, I practice theater improvisation and play jazz piano.
             </p>
         </section>
 
-        <section id="experience">
-            <h2>Selected Experience</h2>
+        <section>
+            <h2>Selected Work</h2>
 
             <div class="job-item">
-                <div class="job-header">
-                    <span class="job-title">Senior Backend Engineer <span class="job-company">@ Vinted</span></span>
-                    <span class="job-date">2023 - Present</span>
-                </div>
+                <span class="job-title">Senior Backend Engineer, Vinted</span>
+                <span class="job-meta">2023 – Present</span>
                 <ul class="job-desc">
-                    <li><strong>Technical Lead (Sizes Mission):</strong> Led the decoupling of size attributes from the core monolith, managing cross-team alignment to migrate legacy architecture.</li>
-                    <li><strong>Knowledge Graphs:</strong> Developed a POC using Apache Jena to transition category visibility towards a graph-based approach.</li>
-                    <li><strong>New Verticals:</strong> Spearheaded backend implementation for "Books" & "Electronics" categories (DSA compliance, scaling).</li>
+                    <li>Technical Lead for the "Sizes" decoupling mission from the monolith.</li>
+                    <li>Developing Knowledge Graph POCs (Apache Jena) for product discovery.</li>
+                    <li>Spearheaded backend for "Books" & "Electronics" new vertical launches.</li>
                 </ul>
             </div>
 
             <div class="job-item">
-                <div class="job-header">
-                    <span class="job-title">Senior Software Engineer <span class="job-company">@ AMBOSS</span></span>
-                    <span class="job-date">2021 - 2023</span>
-                </div>
+                <span class="job-title">Senior Software Engineer, AMBOSS</span>
+                <span class="job-meta">2021 – 2023</span>
                 <ul class="job-desc">
-                    <li><strong>Monolith Decomposition:</strong> Drove the decoupling strategy using DDD and Branch by Abstraction patterns.</li>
-                    <li><strong>PHP Guild Lead:</strong> Led the chapter of 60+ engineers, defining technical roadmap and best practices.</li>
+                    <li>Designed monolith decomposition strategy using DDD patterns.</li>
+                    <li>Led the PHP Guild (60+ engineers), defining technical roadmap.</li>
                 </ul>
             </div>
 
              <div class="job-item">
-                <div class="job-header">
-                    <span class="job-title">Tech Lead & Backend Dev <span class="job-company">@ Lamia Oy</span></span>
-                    <span class="job-date">2019 - 2021</span>
-                </div>
+                <span class="job-title">Tech Lead, Lamia Oy</span>
+                <span class="job-meta">2019 – 2021</span>
                 <ul class="job-desc">
-                    <li>Optimized high-volume data ingestion for millions of products, reducing update times by 80%.</li>
-                    <li>Designed custom caching strategies using Redis & Elasticsearch for dynamic pricing.</li>
+                    <li>Optimized high-volume ingestion for millions of products (80% faster).</li>
+                    <li>Designed custom caching strategies using Redis & Elasticsearch.</li>
                 </ul>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Tech Stack & Methods</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Architecture</h3>
-                    <ul class="skill-list">
-                        <li>Domain-Driven Design (DDD)</li>
-                        <li>Microservices & Event-Driven</li>
-                        <li>Monolith Decomposition</li>
-                        <li>System Design</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Data & Semantic</h3>
-                    <ul class="skill-list">
-                        <li>Knowledge Graphs</li>
-                        <li>Apache Jena (RDF/SPARQL)</li>
-                        <li>PostgreSQL / MySQL</li>
-                        <li>Redis / Elasticsearch</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Languages & Frameworks</h3>
-                    <ul class="skill-list">
-                        <li>Ruby on Rails</li>
-                        <li>Go (Golang)</li>
-                        <li>PHP (Deep background)</li>
-                        <li>TypeScript</li>
-                    </ul>
-                </div>
+        <section>
+            <h2>Stack & Concepts</h2>
+            <div class="skills-block">
+                <h3>Architecture & Data</h3>
+                <ul class="skill-list">
+                    <li>Domain-Driven Design</li>
+                    <li>Distributed Systems</li>
+                    <li>Monolith Decomposition</li>
+                    <li>Knowledge Graphs (RDF/SPARQL)</li>
+                </ul>
+            </div>
+            <div class="skills-block">
+                <h3>Technology</h3>
+                <ul class="skill-list">
+                    <li>Ruby on Rails</li>
+                    <li>Go</li>
+                    <li>PHP</li>
+                    <li>PostgreSQL</li>
+                    <li>Redis</li>
+                </ul>
             </div>
         </section>
 
-        <section id="speaking">
-            <h2>Speaking & Advanced Training</h2>
-            
-            <div class="speaking-item">
-                <div class="speaking-title">Strategic Design for Software Teams</div>
-                <div class="speaking-event">Workshop with Eric Evans (2025)</div>
+        <section>
+            <h2>Speaking</h2>
+            <div class="job-item">
+                 <ul class="job-desc">
+                    <li>Strategic Design Workshop with Eric Evans (2025)</li>
+                    <li>Microservices Workshop with Chris Richardson (2024)</li>
+                    <li>Guest Speaker, IoT & Big Data Conference (Lugano)</li>
+                </ul>
             </div>
-             <div class="speaking-item">
-                <div class="speaking-title">Designing Microservices Architecture</div>
-                <div class="speaking-event">Workshop with Chris Richardson (2024)</div>
-            </div>
-            <div class="speaking-item">
-                <div class="speaking-title">IoT, Big Data & ML Conference</div>
-                <div class="speaking-event">Guest Speaker - Lugano, Switzerland</div>
-            </div>
-            <div class="speaking-item">
-                <div class="speaking-title">TIBCO Jaspersoft Launch Event</div>
-                <div class="speaking-event">Technical Presenter - Milan, Italy</div>
-            </div>
-        </section>
-
-        <section id="beyond">
-            <h2>Beyond Code</h2>
-            <p>
-                I believe that great engineering requires empathy, communication, and discipline. 
-                I hone these skills as an active <strong>Theater Practitioner</strong> (improving public speaking and improvisation) 
-                and as a <strong>Classical/Jazz Pianist</strong>.
-            </p>
         </section>
 
     </main>
 
     <footer>
-        <div class="copyright">
-            &copy; 2025 Paolo Combi. Berlin.
-        </div>
-        <div class="social-links">
+        <div>&copy; 2025</div>
+        <nav>
             <a href="https://linkedin.com/in/paolocombi" target="_blank">LinkedIn</a>
             <a href="https://github.com/colapiombo" target="_blank">GitHub</a>
             <a href="mailto:paolo@combi.li">Email</a>
-        </div>
+        </nav>
     </footer>
 
 </div>
+
+<script>
+    // Check for saved user preference, if any, on load
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+    // If there is a saved theme, apply it
+    if (currentTheme) {
+        document.body.classList.add(currentTheme);
+    }
+
+    const toggleBtn = document.querySelector('#theme-toggle');
+
+    // Listen for a click on the button
+    toggleBtn.addEventListener('click', function() {
+        // Toggle the .dark-theme class on the body
+        document.body.classList.toggle('dark-theme');
+
+        // Save the user's preference in localStorage
+        let theme = 'light';
+        if (document.body.classList.contains('dark-theme')) {
+            theme = 'dark-theme';
+        }
+        localStorage.setItem('theme', theme);
+    });
+</script>
 
 </body>
 </html>
