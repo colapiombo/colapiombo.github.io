@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Paolo Combi - Senior Backend Engineer & Technical Lead. Specializing in DDD, Distributed Systems, and System Decoupling.">
     <title>Paolo Combi</title>
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
     <style>
         /* DEFINIZIONE VARIABILI COLORI (Light Mode Default) */
         :root {
@@ -53,12 +57,23 @@
         }
 
         .logo {
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
             text-decoration: none;
-            color: var(--text-primary);
+            display: block;
+            line-height: 0; /* Rimuove spazi extra sotto l'immagine */
+        }
+
+        .logo img {
+            height: 40px; /* Altezza fissa per mantenere le proporzioni */
+            width: auto;
+            display: block;
+            transition: filter 0.3s;
+        }
+
+        /* SMART LOGO INVERSION FOR DARK MODE 
+           Se il tuo logo è nero su trasparente, questo lo renderà bianco in dark mode.
+           Se il tuo logo è colorato e non vuoi questo effetto, rimuovi questa riga. */
+        body.dark-theme .logo img {
+            filter: invert(1);
         }
 
         .theme-toggle-btn {
@@ -165,7 +180,10 @@
 <div class="container">
     
     <header>
-        <a href="#" class="logo">Paolo Combi</a>
+        <a href="#" class="logo">
+            <img src="logo.png" alt="Paolo Combi Logo">
+        </a>
+
         <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
             <svg class="dark-icon" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 9c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
             <svg class="light-icon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
@@ -184,7 +202,7 @@
         <section>
             <h2>About</h2>
             <p style="color: var(--text-secondary);">
-                Based in Berlin. [cite_start]Currently working at <strong>Vinted</strong> on the Ontologies domain [cite: 746-755]. I specialize in backend engineering and system decoupling. [cite_start]Recently, I've been driving the internal adoption of <strong>Knowledge Graphs</strong> to solve complex discovery challenges [cite: 831-833]. When not coding, I practice theater improvisation and play jazz piano.
+                Based in Berlin. Currently working at <strong>Vinted</strong> on the Ontologies domain. I specialize in backend engineering and system decoupling. Recently, I've been driving the internal adoption of <strong>Knowledge Graphs</strong> to solve complex discovery challenges. When not coding, I practice theater improvisation and play jazz piano.
             </p>
         </section>
 
@@ -195,9 +213,9 @@
                 <span class="job-title">Senior Backend Engineer, Vinted</span>
                 <span class="job-meta">2023 – Present</span>
                 <ul class="job-desc">
-                    [cite_start]<li>Technical Lead for the "Sizes" decoupling mission from the monolith[cite: 749, 912].</li>
-                    [cite_start]<li>Driving the adoption of Knowledge Graphs (Apache Jena) with internal POCs[cite: 751, 915].</li>
-                    [cite_start]<li>Spearheaded backend for "Books" & "Electronics" new vertical launches[cite: 750, 913].</li>
+                    <li>Technical Lead for the "Sizes" decoupling mission from the monolith.</li>
+                    <li>Driving the adoption of Knowledge Graphs (Apache Jena) with internal POCs.</li>
+                    <li>Spearheaded backend for "Books" & "Electronics" new vertical launches.</li>
                 </ul>
             </div>
 
@@ -205,8 +223,8 @@
                 <span class="job-title">Senior Software Engineer, AMBOSS</span>
                 <span class="job-meta">2021 – 2023</span>
                 <ul class="job-desc">
-                    [cite_start]<li>Designed monolith decomposition strategy using DDD patterns[cite: 759, 924].</li>
-                    [cite_start]<li>Led the PHP Guild (60+ engineers), defining technical roadmap[cite: 757, 923].</li>
+                    <li>Designed monolith decomposition strategy using DDD patterns.</li>
+                    <li>Led the PHP Guild (60+ engineers), defining technical roadmap.</li>
                 </ul>
             </div>
 
@@ -214,8 +232,8 @@
                 <span class="job-title">Tech Lead, Lamia Oy</span>
                 <span class="job-meta">2019 – 2021</span>
                 <ul class="job-desc">
-                    [cite_start]<li>Optimized high-volume ingestion for millions of products (80% faster)[cite: 774, 934].</li>
-                    [cite_start]<li>Designed custom caching strategies using Redis & Elasticsearch[cite: 775, 936].</li>
+                    <li>Optimized high-volume ingestion for millions of products (80% faster).</li>
+                    <li>Designed custom caching strategies using Redis & Elasticsearch.</li>
                 </ul>
             </div>
         </section>
@@ -224,9 +242,9 @@
             <h2>Advanced Training</h2>
             <div class="job-item">
                  <ul class="job-desc">
-                    [cite_start]<li><strong>Strategic Design for Software Teams</strong> — with Eric Evans (2025) [cite: 831]</li>
-                    [cite_start]<li><strong>Designing Microservices Architecture</strong> — with Chris Richardson (2024) [cite: 833]</li>
-                    [cite_start]<li><strong>EventStorming Master Class</strong> — with Alberto Brandolini (2022) [cite: 837]</li>
+                    <li><strong>Strategic Design for Software Teams</strong> — with Eric Evans (2025)</li>
+                    <li><strong>Designing Microservices Architecture</strong> — with Chris Richardson (2024)</li>
+                    <li><strong>EventStorming Master Class</strong> — with Alberto Brandolini (2022)</li>
                 </ul>
             </div>
         </section>
@@ -235,9 +253,9 @@
             <h2>Public Speaking</h2>
             <div class="job-item">
                  <ul class="job-desc">
-                    [cite_start]<li>Guest Speaker, <strong>IoT & Big Data Conference</strong> (Lugano) [cite: 985]</li>
-                    [cite_start]<li>Technical Presenter, <strong>TIBCO Jaspersoft Launch</strong> (Milan) [cite: 990]</li>
-                    [cite_start]<li>Webinar Speaker, <strong>Qlik Predictive Analytics</strong> [cite: 994]</li>
+                    <li>Guest Speaker, <strong>IoT & Big Data Conference</strong> (Lugano)</li>
+                    <li>Technical Presenter, <strong>TIBCO Jaspersoft Launch</strong> (Milan)</li>
+                    <li>Webinar Speaker, <strong>Qlik Predictive Analytics</strong></li>
                 </ul>
             </div>
         </section>
