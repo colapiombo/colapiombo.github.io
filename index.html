@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Paolo Combi - Senior Backend Engineer & Distributed Systems Architect.">
+    <meta name="description" content="Paolo Combi - Senior Backend Engineer & Technical Lead. Specializing in DDD, Distributed Systems, and System Decoupling.">
     <title>Paolo Combi</title>
     <style>
         /* DEFINIZIONE VARIABILI COLORI (Light Mode Default) */
@@ -150,6 +150,14 @@
         footer nav a { margin-left: 20px; border: none; }
         footer nav a:hover { color: var(--text-primary); }
 
+        /* MOBILE TWEAKS */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.8rem; }
+            .container { padding: 30px 20px; }
+            footer { flex-direction: column; gap: 20px; }
+            footer nav a { margin-left: 0; margin-right: 20px; }
+        }
+
     </style>
 </head>
 <body>
@@ -166,9 +174,9 @@
 
     <main>
         <section>
-            <h1>System Architect.<br>Backend Lead.</h1>
+            <h1>Senior Backend Engineer.<br>Technical Lead.</h1>
             <p class="lead">
-                Architecting high-scale distributed systems using Domain-Driven Design and Knowledge Graphs.
+                Building scalable distributed systems and introducing Domain-Driven Design patterns to modernize legacy platforms.
             </p>
             <p><a href="resume.pdf" target="_blank">Download Resume (PDF)</a></p>
         </section>
@@ -176,7 +184,7 @@
         <section>
             <h2>About</h2>
             <p style="color: var(--text-secondary);">
-                Based in Berlin. Currently evolving the Ontologies domain at <strong>Vinted</strong>. I specialize in transitioning legacy monoliths into flexible distributed systems. When not designing architecture, I practice theater improvisation and play jazz piano.
+                Based in Berlin. [cite_start]Currently working at <strong>Vinted</strong> on the Ontologies domain [cite: 746-755]. I specialize in backend engineering and system decoupling. [cite_start]Recently, I've been driving the internal adoption of <strong>Knowledge Graphs</strong> to solve complex discovery challenges [cite: 831-833]. When not coding, I practice theater improvisation and play jazz piano.
             </p>
         </section>
 
@@ -187,9 +195,9 @@
                 <span class="job-title">Senior Backend Engineer, Vinted</span>
                 <span class="job-meta">2023 – Present</span>
                 <ul class="job-desc">
-                    <li>Technical Lead for the "Sizes" decoupling mission from the monolith.</li>
-                    <li>Developing Knowledge Graph POCs (Apache Jena) for product discovery.</li>
-                    <li>Spearheaded backend for "Books" & "Electronics" new vertical launches.</li>
+                    [cite_start]<li>Technical Lead for the "Sizes" decoupling mission from the monolith[cite: 749, 912].</li>
+                    [cite_start]<li>Driving the adoption of Knowledge Graphs (Apache Jena) with internal POCs[cite: 751, 915].</li>
+                    [cite_start]<li>Spearheaded backend for "Books" & "Electronics" new vertical launches[cite: 750, 913].</li>
                 </ul>
             </div>
 
@@ -197,8 +205,8 @@
                 <span class="job-title">Senior Software Engineer, AMBOSS</span>
                 <span class="job-meta">2021 – 2023</span>
                 <ul class="job-desc">
-                    <li>Designed monolith decomposition strategy using DDD patterns.</li>
-                    <li>Led the PHP Guild (60+ engineers), defining technical roadmap.</li>
+                    [cite_start]<li>Designed monolith decomposition strategy using DDD patterns[cite: 759, 924].</li>
+                    [cite_start]<li>Led the PHP Guild (60+ engineers), defining technical roadmap[cite: 757, 923].</li>
                 </ul>
             </div>
 
@@ -206,8 +214,30 @@
                 <span class="job-title">Tech Lead, Lamia Oy</span>
                 <span class="job-meta">2019 – 2021</span>
                 <ul class="job-desc">
-                    <li>Optimized high-volume ingestion for millions of products (80% faster).</li>
-                    <li>Designed custom caching strategies using Redis & Elasticsearch.</li>
+                    [cite_start]<li>Optimized high-volume ingestion for millions of products (80% faster)[cite: 774, 934].</li>
+                    [cite_start]<li>Designed custom caching strategies using Redis & Elasticsearch[cite: 775, 936].</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Advanced Training</h2>
+            <div class="job-item">
+                 <ul class="job-desc">
+                    [cite_start]<li><strong>Strategic Design for Software Teams</strong> — with Eric Evans (2025) [cite: 831]</li>
+                    [cite_start]<li><strong>Designing Microservices Architecture</strong> — with Chris Richardson (2024) [cite: 833]</li>
+                    [cite_start]<li><strong>EventStorming Master Class</strong> — with Alberto Brandolini (2022) [cite: 837]</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Public Speaking</h2>
+            <div class="job-item">
+                 <ul class="job-desc">
+                    [cite_start]<li>Guest Speaker, <strong>IoT & Big Data Conference</strong> (Lugano) [cite: 985]</li>
+                    [cite_start]<li>Technical Presenter, <strong>TIBCO Jaspersoft Launch</strong> (Milan) [cite: 990]</li>
+                    [cite_start]<li>Webinar Speaker, <strong>Qlik Predictive Analytics</strong> [cite: 994]</li>
                 </ul>
             </div>
         </section>
@@ -235,17 +265,6 @@
             </div>
         </section>
 
-        <section>
-            <h2>Speaking</h2>
-            <div class="job-item">
-                 <ul class="job-desc">
-                    <li>Strategic Design Workshop with Eric Evans (2025)</li>
-                    <li>Microservices Workshop with Chris Richardson (2024)</li>
-                    <li>Guest Speaker, IoT & Big Data Conference (Lugano)</li>
-                </ul>
-            </div>
-        </section>
-
     </main>
 
     <footer>
@@ -260,22 +279,13 @@
 </div>
 
 <script>
-    // Check for saved user preference, if any, on load
     const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-    // If there is a saved theme, apply it
     if (currentTheme) {
         document.body.classList.add(currentTheme);
     }
-
     const toggleBtn = document.querySelector('#theme-toggle');
-
-    // Listen for a click on the button
     toggleBtn.addEventListener('click', function() {
-        // Toggle the .dark-theme class on the body
         document.body.classList.toggle('dark-theme');
-
-        // Save the user's preference in localStorage
         let theme = 'light';
         if (document.body.classList.contains('dark-theme')) {
             theme = 'dark-theme';
